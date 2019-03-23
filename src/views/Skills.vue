@@ -31,7 +31,7 @@
 
 <script>
 import Nav from '../components/Nav.vue'
-import tprogress from '../components/progress'
+import tprogress from '../components/progress2'
   export default {
     components: {
       Nav  , tprogress 

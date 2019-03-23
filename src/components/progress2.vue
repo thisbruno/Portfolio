@@ -59,14 +59,20 @@
     },
     beforeDestroy () {
       clearInterval(this.interval)
-    },
-    mounted () {
-      this.interval = setInterval(() => {
+		},
+		methods:{
+			progress(){
+				 this.interval = setInterval(() => {
         if (this.fvalue >= this.tvalue) {
           return (this.fvalue = this.tvalue)
         }
         this.fvalue += 1
       }, 7)
+			}
+
+		},
+    mounted () {
+      this.progress()
     }
   }
 </script>
