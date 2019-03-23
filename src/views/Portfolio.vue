@@ -1,9 +1,9 @@
 <template>
-<v-app >
+<v-container >
 <Nav></Nav>
 <h1>portfolio</h1>
 
-</v-app>
+</v-container>
 </template>
 
 <script>
