@@ -1,7 +1,7 @@
 <template>
-  <v-app class="red">
-     <v-content class="purple lighten-3" >    
-       <router-view class="grey lighten-2 px-4 py-2"></router-view>
+  <v-app>
+     <v-content  >    
+       <router-view class="darkblue lighten-5 px-4 py-2"></router-view>
     </v-content>
 
     
