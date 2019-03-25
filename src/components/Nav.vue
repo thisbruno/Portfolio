@@ -4,59 +4,39 @@
       <router-link to="/"><img class="red" height="80" contain src='../assets/fav.jpg' /></router-link>
 
       <v-spacer></v-spacer> 
-      <span v-for="link in menuItems" :key="link.title" class="hidden-sm-and-down " > 
-        <v-btn flat large class="black--text darken-2"   router :to='link.route'>
+
+      <!-- class="hidden-sm-and-down " -->
+      <span v-for="link in menuItems" :key="link.title" id="nav"  > 
+        <v-btn  flat large class=" darken-2  btn2"   router :to='link.route'>
             <!-- <v-icon  class="  purple--text">{{link.icon}}</v-icon> -->
           <span  class="font-weight-bold  toolbar-link pl-1">{{link.title}}</span>
         </v-btn>       
       </span>
        <v-spacer></v-spacer> 
 
-             <!-- side drawer btn -->
-      <v-toolbar-side-icon   @click="sideNav=!sideNav" scroll-toolbar-off-screen 
-      class="hidden-md-and-up "></v-toolbar-side-icon>    
-
     </v-toolbar>
-  
-
     <!-- the side-nav links -->
-    <v-navigation-drawer app v-model="sideNav" temporary  class="yellow lighten-4 " >
-      <v-list>
-       <div class="pl-3 py-1 red black--text">
-        <h1 class="display-1">Bruno , </h1>
-        <h1 class="headline">Welcomes You .</h1>
-       </div>
-        <v-list-tile v-for='link in menuItems' :key="link.title" router :to= "link.route" @click="sideNav=false" class="mt-1">
-          <v-list-tile-action>
-            <v-icon class="  purple--text">{{link.icon}}</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-content>
-            <v-list-tile-title class="red--text text--darken-4 ">{{link.title}}</v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
-      </v-list>   
-    </v-navigation-drawer>
-     
+      
   </v-card>
 </template>
 
+
 <script>
-export default {
   
+export default { 
+
   data() {
     return{
-      sideNav: false,
+
     menuItems :[
        {  icon:'person', title : "Home", route:"/" },
       {  icon:'supervisor_account', title : "About", route:"/about" },
       {  icon:'person', title : "Skills", route:"/skills" },
       {  icon:'person', title : "Portfolio", route:"/portfolio" },
       {  icon:'person', title : "Contact", route:"/contact" },
-        ]     
+        ]   
     }
-  },
-    
-    
+  },   
   }
 
 </script>
@@ -64,6 +44,35 @@ export default {
 <style scoped>
 .toolbar-link{
   font-size: 23px;
+}
+
+#nav .btn2 {
+  position: relative;
+}
+#nav .btn2:after {
+  position: absolute; bottom: 0; left: 0; right: 0; margin: auto;
+  width: 0%; content: '.';  color: transparent;  background: rgb(223, 56, 112);
+  height: 1px;
+}
+#nav .btn2 {
+  transition: all .037s;
+}
+#nav .btn2:after {
+  text-align: left; content: '.';  margin: 0;  opacity: 0;
+}
+#nav .btn2:hover {
+  color: cyan;  z-index: 1;
+}
+#nav .btn2:hover:after {
+  z-index: -10; animation: fill .37s forwards; -webkit-animation: fill .37s forwards;
+  -moz-animation: fill .37s forwards;  opacity: 1;
+}
+
+/* Keyframes */
+@-webkit-keyframes fill {
+  0% {  width: 0%; height: 1px;  }
+  50% { width: 100%;  height: 1px; }
+  100% {  width: 100%; height: 100%;  background: #E31B6D; }
 }
 </style>
 

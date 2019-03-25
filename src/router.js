@@ -2,11 +2,12 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 // import Home from './views/Home.vue'
-import About from './views/About2.vue'
+import About from './views/About.vue'
 import Contact from './views/Contact.vue'
 import Portfolio from './views/Portfolio.vue'
 import Skills from './views/Skills.vue'
-import Home from './views/Homy.vue'
+import Home from './views/Home.vue'
+
 
 Vue.use(Router)
 

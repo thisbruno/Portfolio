@@ -1,84 +1,35 @@
 <template>
-<v-app  class="info">
+<v-app class="black lighten-4 pt-5">
   <Nav></Nav>
-<div class="pt-5">
+
   <v-layout row wrap>
-    <v-flex xs12 sm8 md8 offset-md0 class="text-xs-center text-sm-left mb-3">
-      
-     <v-flex xs12 sm10 offset-sm1 offset-md-2>       
-       <div class="headline highlight">Hello,</div> <br>
-      <div class="headline white--text">I'm <span class="highlight"> Bruno Kibura</span> ,  a fullstack developer based in Nairobi , Kenya</div> <br>  
-      
-     </v-flex>
-       <v-flex xs10 offset-sm0>
-       <div class="title white--text ma-3 mb-4 pt-5">
+    <v-flex xs12 sm6 md6 class=" text-sm-left ml-3 pl-3">
+       <div class="display-2 " style="color: #E31B6D;">About Me,</div> <br>      
+       <div class="headline cyan--text font-weight-light abouttext">
+         <div class="abouttext">Everthing started with a passion for programming and web technologies. </div> <br>
+         <div class="abouttext">I enjoy converting my ideas into code to build products and projects that makes the world a better place while fulfilling the my clients needs and instructions to the letter</div> <br>
+         <div class="abouttext">I've always been drawn to the overlap between design and development. My <router-link to= '/skills' tag="span"  style="cursor: pointer; color: #E31B6D" class="font-weight-bold">skills </router-link> are broad ranging from ux to design, front end to back end development.</div><br>
+          <div class="abouttext">
           I'm available for remote work - if you would like to build something together, 
-        <router-link to= '/contact' tag="span" class="orange--text intouch" style="cursor: pointer">get in touch ?</router-link>
+        <router-link to= '/contact' style="cursor: pointer; color: #E31B6D" class="font-weight-bold"><span style="text-decoration:none">get in touch ?</span></router-link>
        </div>
+         </div>     
     </v-flex>
 
-
-
-    </v-flex>
-      <v-flex xs12 sm4  md3 offset-md1 class="text-xs-center mb-2 pb-3">
-        
-         <div class="testimonial-quote group mt-3 ">
-        <img src='../assets/me.jpg'>
-        <div class="quote-container">
-            <blockquote>
-                <p>I've always been drawn to the overlap between design and development. My skills are broad: from ux to design, front end to back end development.”</p>
-            </blockquote>  
-           <hr style="margin-top: 37px auto; opacity: 5;">
-           </div>
-
-               <v-flex  xs11 sm8  md6 offset-sm2 class="ma-2 pt-5">
-       <v-card class="info lighten-3 mb-2">
-         <v-card-title class="highlight title justify-center">THIS IS WHAT I DO</v-card-title>
-       </v-card>
-        </v-flex>  
-        
-        <v-flex  xs11 sm8 md6 class="ma-2 ">
-       <v-card class="info lighten-3 mb-2">
-         <v-card-title class="info--text title">Front-End</v-card-title>
-         <v-card-text class="subheading mt-0 pt-0">, DataViz</v-card-text>
-       </v-card>
-        </v-flex>
-
-       <v-flex  xs11 sm8 md6 class="ma-2">
-       <v-card class="info lighten-3 mb-2">
-         <v-card-title class="info--text title"></v-card-title>
-         <v-card-text class="subheading mt-0 pt-0"></v-card-text>
-       </v-card>
-        </v-flex>
-       <v-flex  xs11 sm8 md6 class="ma-2">
-         <v-card class="info lighten-3">
-         <v-card-title class="info--text title">Design</v-card-title>
-         <v-card-text class="subheading mt-0 pt-0">UX, UI, Web-Apps, Logos</v-card-text>
-       </v-card>
-     </v-flex>
-    </div>         
-    </v-flex>  
-  </v-layout>
-
-  <v-layout>
-    <v-flex xs12 sm6>
-
-
-
-    </v-flex>    
-    
-
-  </v-layout>
-
-
-
-
-
-   <v-layout row wrap>
-
-   </v-layout>
-  
-</div>
+    <v-flex xs12 sm4 md4 offset-sm1 class="cyan--text headline">
+      <v-card class="mb-2">
+        <v-card-title class=" headline justify-center primary--text text--darken-1 cyan lighten-3" >
+          <span text-xs-center class="text-uppercase">Languages</span>          
+        </v-card-title>        
+         </v-card>
+        <v-card class="mb-2" v-for="lang in langs" :key="lang.title" >
+          <v-card-text class=" subheading "  >
+         <div class="headline text-xs-center cyan--text text-uppercase underline" >{{lang.title}}</div>
+            <div class="headline text-xs-center">{{lang.text}}</div>
+          </v-card-text>
+        </v-card>     
+    </v-flex> 
+  </v-layout> 
  <Footer class="mt-3"></Footer>
 </v-app>
 </template>
@@ -90,87 +41,27 @@ import Footer from '../components/Footer.vue'
 
   export default {
     components: {
-      Nav, Footer
-    
+      Nav, Footer   
+    },
+    data () {
+      return {
+        langs:[
+          {title: 'Design' , text: 'UX, UI, Web-Apps, Logos'},
+          {title: 'Front-End' , text: 'CSS3, Javascript, ES6, React, ThreeJS'},
+          {title: 'Back-End' , text: 'NodeJS, PHP, APIs, NoSQL AWS,  Firebase'}
+        ]
+      }
     }
   }
 </script>
 
 <style scoped>
-.highlight {
-  color: #E31B6D; }
-.contact{
-    background-color: rgb(134, 110, 175);
+.abouttext{
+    line-height: 1.4;
 }
-
-.testimonial-quote {
-  font-size: 14px;
-}
-.testimonial-quote blockquote {
-  /* Negate theme styles */
-  border: 0;
-  margin: 0;
-  padding: 0;
-  background: none;
-  color: white;
-  font-family: Georgia, serif;
-  font-size: 1.5em;
-  font-style: italic;
-  line-height: 1.4 !important;
-  margin: 0;
-  position: relative;
-  text-shadow: 0 1px rgb(0, 0, 0);
-  z-index: 600;
-}
-
-.testimonial-quote blockquote * {
-  box-sizing: border-box;
-}
-
-.testimonial-quote blockquote p {
-  color: #75808a;
-  line-height: 1.2 !important;
-}
-
-.testimonial-quote blockquote p:first-child:before {
-  content: '\201C';
-  color: #81bedb;
-  font-size: 7.5em;
-  font-weight: 700;
-  opacity: .3;
-  position: absolute;
-  top: -.4em;
-  left: -.2em;
-  text-shadow: none;
-  z-index: -300;
-}
-
-.testimonial-quote img {
-  border: 3px dotted rgb(243, 156, 197);
-  border-radius: 50%;
-  display: block;
-  width: 120px;
-  height: 120px;
-  position: absolute;
-  top: -.2em;
-  left: 0;
-}
-.testimonial-quote {
-  position: relative;
-}
-
-.testimonial-quote .quote-container {
-  padding-left: 120px;
-}
-
-.testimonial-quote.right .quote-container {
-  padding-left: 0;
-  padding-right: 16px;
-}
-
-.testimonial-quote.right img {
-  left: auto;
-  right: 0;
+.underline{
+  text-decoration: underline;
+  font-weight: bold;
 }
 </style>
 

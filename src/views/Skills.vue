@@ -2,9 +2,6 @@
 <v-app  id ="skills" >
 <Nav></Nav>
 <h1 class="text-xs-center mt-3 mb-4 primary--text display-1 skill">My Skills</h1>
-  
-
-
 <v-layout row wrap>
   <v-flex xs12 sm6 md7 class="py-2 ml-3">
     <div class="headline cyan--text">
@@ -29,7 +26,7 @@
 
 <script>
 import Nav from '../components/Nav.vue'
-import tprogress from '../components/progress'
+import tprogress from '../components/Progress'
 import Footer from '../components/Footer.vue'
   export default {
     components: {
