@@ -1,52 +1,47 @@
 <template>
   <v-app class="contact ">
     <Nav></Nav>
-        <h1 class="display-2 primary--text text-xs-center mb-3 mr-5">Contacts</h1>
+        <h1 class="display-2 text-xs-center mb-3 white--text ">Contact Details</h1>
+
+        <v-layout>
+          <v-flex xs12 sm6 md4  offset-sm3 offset-md4 >
+            <v-card  class="pa-3 cyan lighten-3 " >                
+                <span class="pt-3 pb-4 px-3 title primary--text text-xs-center justify-center" >  
+                  <v-icon class="primary--text left " large >phone</v-icon>  
+                  (+254) 70 - 7474 - 123 </span>              
+            </v-card>
+          </v-flex>
+        </v-layout>
 
 
         <v-layout row wrap>
-              <v-flex xs12 sm4 offset-sm0 class="mt-5 mb-3">  
-            <v-card  class="mb-2 ccard" hover v-for="item in contacts"  :key="item.detail">
-              <v-layout row wrap class="pa-3">
-                <v-flex xs2>
-                  <v-icon left  class="pa-2 info--text">{{item.icon}}</v-icon>
-                </v-flex>
-                <v-flex xs8 offset-sm1>
-                    <span class="headline primary--text"> {{item.detail}}</span>
-                </v-flex>
-              </v-layout>              
-            </v-card>
-   
-          </v-flex>
-
-
-
-          <v-flex xs12 sm6 offset-sm1 >
+        <v-flex xs12 sm6 offset-sm3 class="mt-3 ">
             <v-card round>
-              <v-form class="mt-3 px-2 py-3 ccard1 " >
-                <p class="title ml-2 primary--text">Send me a Message </p>
-                 <v-text-field   style="font-size: 23px color:yellow" name="name" placeholder="Name" height='27px' v-model="name" outline ></v-text-field>
-               <v-text-field light  class="" style="font-size: 23px"  name="email" placeholder="Email" height='27px' v-model="email" outline >  </v-text-field>
-                <v-textarea  style="font-size:23px" name="message" v-model="message" placeholder="Message"  outline ></v-textarea>
-                 <v-btn class="info  darken-3 p" type="submit" name="name" >Send Message</v-btn>                
+              <v-form class="mt-3 px-5 py-3 info lighten-3 " >
+                <p class="headline ml-2 primary--text text-uppercase text-xs-center">Send me a Message </p>
+                 <v-text-field   style="font-size:23px" name="name" placeholder="Name" height='27px' v-model="name"  ></v-text-field>
+               <v-text-field light  class="" style="font-size: 23px"  name="email" placeholder="Email" height='27px' v-model="email"  >  </v-text-field>
+                <v-textarea  style="font-size:23px" name="message" v-model="message" placeholder="Message"   ></v-textarea>
+                 <v-btn class="info  lighten-3 primary--text" type="submit" name="name" >Send Message</v-btn>       <span><v-card>ds n</v-card></span>         
               </v-form>
             </v-card>
-          </v-flex>
-                     
-
+          </v-flex>                 
           </v-layout>
 
 
-          <v-layout>            
-          <v-flex xs12 sm6 offset-xs4 class="mt-4">        
+          <v-layout class="mt-4 mb-5">            
+          <v-flex xs12 sm6 offset-sm4 offset-xs2 >        
               <div class="icon-bar">
-                  <a href="#" class="twitter"><i class="fa fa-twitter"></i></a> 
-                  <a href="#" class="github"><i class="fa fa-github" ></i></a>     
-                  <a href="#" class="linkedin"><i class="fa fa-linkedin-square" ></i></a>
-                  <a href="#" class="slack"><i class="fa fa-slack" ></i></a>                  
+              <a href="#" class="email"><i class="fa fa-envelope"></i></a>    
+              <a href="#" class="twitter"><i class="fa fa-twitter"></i></a> 
+               <a href="#" class="github"><i class="fa fa-github" ></i></a>     
+               <a href="#" class="linkedin"><i class="fa fa-linkedin-square" ></i></a>
+               <a href="#" class="slack"><i class="fa fa-slack" ></i></a>  
                 </div> 
             </v-flex>
             </v-layout>
+
+            <Footer></Footer>
 
 
     
@@ -55,9 +50,10 @@
 
 <script>
 import Nav from '../components/Nav.vue'
+import Footer from '../components/Footer.vue'
   export default {
     components: {
-      Nav 
+      Nav , Footer
     },
     data(){
       return{
@@ -101,7 +97,6 @@ import Nav from '../components/Nav.vue'
 </script>
  
  <style scoped>
-/* Style the icon bar links */
 .icon-bar a {
   display: relative;
   text-align: center;
@@ -111,16 +106,14 @@ import Nav from '../components/Nav.vue'
   color: white;
   font-size: 37px;
 }
-
-/* Style the social media icons with color, if you want */
 .icon-bar a:hover {
-  background-color: rgb(34, 32, 34);
+  background-color: rgb(255, 9, 9);
+  font-size: 53px;
 }
 .twitter {
   background: rgb(26, 141, 230);
   color: white;
 }
-
 .linkedin {
   background: #f5076a;
   color: white;
@@ -130,6 +123,10 @@ import Nav from '../components/Nav.vue'
 }.slack {
   background: #595bca;
   color: white;
+}
+.email {
+  background: #d60857;
+  color: rgb(82, 7, 7);
 }
 .ccard:hover{
  background-color: rgb(143, 248, 183);
@@ -141,11 +138,7 @@ import Nav from '../components/Nav.vue'
 .ccard{
  background-color: rgb(143, 248, 183);
 }
-.ccard1{
- background-color: rgb(143, 248, 183);
-}
-.contact{
- 
+.contact{ 
    background-color: rgb(23, 15, 37);
 }
 

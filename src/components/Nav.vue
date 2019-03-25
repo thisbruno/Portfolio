@@ -1,25 +1,20 @@
 <template>
   <v-card >
-    <v-toolbar  light  app color="cyan" height='83'
-     >
-   
+    <v-toolbar  light  app color="cyan" height='83' >   
       <router-link to="/"><img class="red" height="80" contain src='../assets/fav.jpg' /></router-link>
 
       <v-spacer></v-spacer> 
       <span v-for="link in menuItems" :key="link.title" class="hidden-sm-and-down " > 
         <v-btn flat large class="black--text darken-2"   router :to='link.route'>
             <!-- <v-icon  class="  purple--text">{{link.icon}}</v-icon> -->
-          <span  class="font-weight-bolder subheading pl-1">{{link.title}}</span>
+          <span  class="font-weight-bold  toolbar-link pl-1">{{link.title}}</span>
         </v-btn>       
       </span>
        <v-spacer></v-spacer> 
 
              <!-- side drawer btn -->
       <v-toolbar-side-icon   @click="sideNav=!sideNav" scroll-toolbar-off-screen 
-      class="hidden-md-and-up "></v-toolbar-side-icon> 
-      
-
-  
+      class="hidden-md-and-up "></v-toolbar-side-icon>    
 
     </v-toolbar>
   
@@ -54,8 +49,8 @@ export default {
     menuItems :[
        {  icon:'person', title : "Home", route:"/" },
       {  icon:'supervisor_account', title : "About", route:"/about" },
-      {  icon:'person', title : "Portfolio", route:"/portfolio" },
       {  icon:'person', title : "Skills", route:"/skills" },
+      {  icon:'person', title : "Portfolio", route:"/portfolio" },
       {  icon:'person', title : "Contact", route:"/contact" },
         ]     
     }
@@ -65,4 +60,11 @@ export default {
   }
 
 </script>
+
+<style scoped>
+.toolbar-link{
+  font-size: 23px;
+}
+</style>
+
 

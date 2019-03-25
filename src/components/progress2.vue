@@ -15,7 +15,7 @@
 		</v-flex>
 			<v-flex xs12 sm6>
 			<div>
-					<v-card class=" cyan lighten-5 ma-2 " v-for="skill in skills2" :key="skill.lang" >
+					<v-card class=" cyan lighten-4 ma-2 " v-for="skill in skills2" :key="skill.lang" >
 						<v-progress-circular  
 						rotate="360"  :size="57"
 							:width="7" :value="skill.progress"  color="blue darken-5" > 
@@ -62,12 +62,15 @@
 		},
 		methods:{
 			progress(){
-				 this.interval = setInterval(() => {
-        if (this.fvalue >= this.tvalue) {
-          return (this.fvalue = this.tvalue)
+				 for(let i = 0; i < skills.progress.length; i++) {
+					 this.interval = setInterval(() => {
+        if (this.fvalue >= this.skills.progress[i]) {
+          return (this.fvalue =this.skills.progress[i])
         }
         this.fvalue += 1
       }, 7)
+         
+}
 			}
 
 		},
@@ -76,3 +79,10 @@
     }
   }
 </script>
+
+// this.interval = setInterval(() => {
+//         if (this.fvalue >= this.tvalue) {
+//           return (this.fvalue = this.tvalue)
+//         }
+//         this.fvalue += 1
+//       }, 7)

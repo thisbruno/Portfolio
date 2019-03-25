@@ -1,27 +1,27 @@
 <template>
 <div>
-	<v-layout row wrap >
+	<v-layout row wrap class="primary lighten-4 " >
 		<v-flex xs12 sm6>
 			<div>
-					<v-card class=" cyan lighten-5 ma-2 " v-for="skill in skills" :key="skill.lang" >
+					<v-card round class=" cyan lighten-4 ma-3 pa-2 " v-for="skill in skills" :key="skill.lang" >
 						<v-progress-circular  
 						rotate="360"  :size="57"
-							:width="7" :value="fvalue"  color="blue darken-5" > 
+			:width="7" :value="skill.progress"  color="blue darken-5" > 
 						<span class="black--text darken-5"> {{ skill.progress }}%</span>
 				  	</v-progress-circular> 						 
-			    	<span class="headline blue--text darken-5">{{skill.lang}}</span>
+			    	<span class="headline black--text darken-"> -  {{skill.lang}}</span>
 					</v-card>
 				</div>
 		</v-flex>
 			<v-flex xs12 sm6>
 			<div>
-					<v-card class=" cyan lighten-5 ma-2 " v-for="skill in skills2" :key="skill.lang" >
+					<v-card round class=" cyan lighten-4 ma-3 pa-2 " v-for="skill in skills2" :key="skill.lang" >
 						<v-progress-circular  
 						rotate="360"  :size="57"
 							:width="7" :value="skill.progress"  color="blue darken-5" > 
 						<span class="black--text darken-5"> {{ skill.progress }}%</span>
 				  	</v-progress-circular> 						 
-			    	<span class="headline blue--text darken-5">{{skill.lang}}</span>
+			    	<span class="headline black--text darken-5"> - {{skill.lang}}</span>
 					</v-card>
 				</div>
 		</v-flex>
