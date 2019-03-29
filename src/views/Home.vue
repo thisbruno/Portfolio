@@ -2,7 +2,7 @@
     <v-container fluid fill-height class="home-hero" style="max-height: 100vh;">
         <v-layout justify-center align-center column class="mt-5 pt-5">
             <div class="display-4 white--text text-xs-center mt-5 pt-1 primary--text">Welcome,</div>
-            <div class="display-1 white--text text-xs-center ma-2 mt-5 pt-2">I'm <span class="display-3" style="color: #E31B6D;" >Bruno </span> ,</div>
+            <div class="display-2 white--text text-xs-center ma-2 mt-5 pt-2">I'm <span class="display-3" style="color: #E31B6D;" >Bruno </span> ,</div>
 
             <div class="display-1  white--text  text-xs-center ma-2 mb-3" >
                 Full-Stack Web Developer 
@@ -36,7 +36,7 @@ export default {
   height: 1px;
 }
 #nav .btn2 {
-  transition: all .037s;
+  transition: all .3s;
 }
 #nav .btn2:after {
   text-align: left; content: '.';  margin: 0;  opacity: 0;

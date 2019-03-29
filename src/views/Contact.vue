@@ -25,8 +25,6 @@
             </v-card>
           </v-flex>                 
           </v-layout>
-
-
           <v-layout class="mt-4 mb-5">            
           <v-flex xs12 sm6 offset-sm4 offset-xs2 >        
               <div class="icon-bar">
@@ -39,11 +37,8 @@
             </v-flex>
             </v-layout>
             <Footer></Footer>
-
              <Hmenu height='20px'>
-          </Hmenu>
-
-    
+          </Hmenu>    
   </v-app>
 </template>
 
@@ -111,7 +106,8 @@ import Footer from '../components/Footer.vue'
  border: #f5076a 2px solid; height: 93px;
  padding: 7px; font-weight: bolder;}
 .ccard{ background-color: rgb(143, 248, 183);}
-.contact{  background-color: rgb(23, 15, 37);}
+.contact{  background-color: #252934;}
+
 
 dfn {
   background: cyan;
@@ -139,8 +135,5 @@ dfn:hover::after,
 dfn:hover::before {opacity: 1;}
 dfn:hover::after {top: 30px;}
 dfn:hover::before {top: 20px;}
-
-
-
  </style>
  

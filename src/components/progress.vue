@@ -9,7 +9,7 @@
 			:width="7" :value="skill.progress"  color="blue darken-5" > 
 						<span class="black--text darken-5"> {{ skill.progress }}%</span>
 				  	</v-progress-circular> 						 
-			    	<span class="headline black--text darken-"> -  {{skill.lang}}</span>
+			    	<span class="headline black--text body-2 font-weight-bold" style=""> -  {{skill.lang}}</span>
 					</v-card>
 				</div>
 		</v-flex>
@@ -21,7 +21,7 @@
 							:width="7" :value="skill.progress"  color="blue darken-5" > 
 						<span class="black--text darken-5"> {{ skill.progress }}%</span>
 				  	</v-progress-circular> 						 
-			    	<span class="headline black--text darken-5"> - {{skill.lang}}</span>
+			    	<span class="headline black--text darken-5 body-2 font-weight-bold"> {{skill.lang}}</span>
 					</v-card>
 				</div>
 		</v-flex>
