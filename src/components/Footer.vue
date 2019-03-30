@@ -1,25 +1,16 @@
 <template>
- <div class="cyan" style="margin: 27px 13% 1px">
-     <v-footer dark height="auto"  >
-    <v-card  class="flex cyan text-xs-center" flat tile  >
-         <v-card-actions class="justify-center">        
-     <div class="title" >&copy; {{ new Date().getFullYear() }}  - <span class="headline"> brunokibura.com</span>  </div>       
-      </v-card-actions>
-    </v-card>
+     <v-footer  class=" back text-xs-center justify-center"  >  
+       <div class="body-2 justify-center  white--text font-weight-bolder" >
+        &copy; {{ new Date().getFullYear() }}  - <span class="subheading"> 
+        thisbruno.com</span>  </div>       
   </v-footer>
- </div>
 </template>
 
+<style scoped>
+.back{
+  background-color: #6880e2;
+  margin: 173px 23% -2px
+}
+</style>
 
-<script>
-  export default {
-    data: () => ({
-      icons: [
-        'fab fa-twitter',
-        'fab fa-github',
-        'fab fa-linkedin',
-        'fab fa-instagram'
-      ]
-    })
-  }
-</script>
+

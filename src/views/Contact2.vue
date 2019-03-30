@@ -2,37 +2,41 @@
   <v-app class="contact ">
     <Nav></Nav>
         <h1 class="heading text-xs-center mb-3 primary--text ">Contact Details</h1>
-
+        <span class="primary--text"></span> <div class="cyan--text"></div>
         <v-layout row wrap> 
-        <v-flex xs12 sm6 md5 offset-sm1 class=" mt-3">
+        <v-flex xs12 sm8 md6 offset-sm1 class=" mt-3">
             <v-card round>
              <v-form class="mt-1 px-5 py-3 info lighten-3 pageclip-form "
                action="https://send.pageclip.co/gOf5il7pwKwOvgYn2k0IWWmZFob8Ju2f"  
                method="post" ref="form"   v-model="valid"  lazy-validation>
                 <p class="subheading ml-2 primary--text text-uppercase text-xs-center">
-                  Send me a  THE Message </p>
-
-            <v-text-field   style="font-size:15px; font-color:red" name="name"
+                  Send me Message </p>
+              
+              <v-flex xs7>
+                <v-text-field   style="font-size:15px; font-color:red" name="name"
                   required placeholder="Name" height='16px' :rules="nameRules" ></v-text-field>
-
+              </v-flex>
+            
+             <v-flex xs7>
              <v-text-field light  class="" style="font-size: 15px"  name="_replyto" required placeholder="Email" height='16px' v-model="email" :rules="emailRules"   >  </v-text-field>
-               
-              <v-textarea  style="font-size:15px" rows='4' name="message"  required placeholder="Message"   ></v-textarea>
-
-              <v-btn class="info  lighten-3 primary--text pageclip-form__submit" type="submit"  :disabled="!valid"  >
+               </v-flex>
+            
+             <v-flex xs10>               
+              <v-textarea  style="font-size:15px" rows='4' name="message" :rules='messageRules'  required placeholder="Message"   ></v-textarea>
+            </v-flex>
+              <v-btn class="info  lighten-3 primary--text pageclip-form__submit" type="submit"  :disabled="!valid"  @click="theSubmit"  >
                    <span>Send</span></v-btn> 
-
               </v-form>
             </v-card>
-          </v-flex>                 
+          </v-flex>             
           
-          <v-flex xs12 sm4 md5 offset-sm1 offset-xs0 class="mt-5" >  
+          <v-flex xs12 sm4 md3 offset-sm1 offset-xs0 class="mt-5" >  
               <v-flex xs12 sm12 offset-sm  class="text-xs-center justify-center" >
                 <v-btn class="cyan  lighten-3 font-weight-bold mb-1"> <v-icon left>phone</v-icon>
                   (+254)-70-7474-123 </v-btn>
               </v-flex>
               <v-flex xs12 sm12 md offset-sm  class="text-xs-center justify-center" >
-                <v-btn class="cyan lighten-3 font-weight-bold  mb-4 text-lowercase"> <v-icon>mail</v-icon>
+                <v-btn class="cyan lighten-3 font-weight-bold subheading  mb-4 text-lowercase"> <v-icon left>mail</v-icon>
                   thisbruno7@gmail.com</v-btn>
               </v-flex>
               <v-flex xs12 sm12 md12 offset-sm  class="text-xs-center " >
@@ -46,9 +50,8 @@
               </v-flex>
                </v-flex>
             </v-layout>
-            <Footer></Footer>  
-            <!-- <Hmenu/>  -->
-  </v-app>
+            <Footer></Footer>         
+</v-app>
 </template>
 
 <script>
@@ -65,23 +68,30 @@ import Footer from '../components/Footer.vue'
          valid: true, 
          email: '',
          emailRules: [
-            v => !!v || 'E-mail is required',
-           v => /.+@.+/.test(v) || 'E-mail must be valid' ],
+            v => !!v || 'e-mail required',
+           v => /.+@.+/.test(v) || 'e-mail not valid' ],
            nameRules:[
-             v => v.length >= 3 || 'Please fill ur name' 
-           ]        
+             v => !!v || '***' 
+           ],
+           messageRules: [
+             v => !!v || '***'
+           ]       
       }
     },
    methods: {
-     
-  },
-    
-   
+     theSubmit() {
+       if(this.$refs.form.validate()){
+        var form = document.querySelector('.pageclip-form')
+        Pageclip.form(form, {
+          onSubmit: function (event) { },
+          onResponse: function (error, response) { },
+          successTemplate:` <span >
+          <div class="text-xs-center title primary--text headline"> Message Sent Succesfully !!!</div> <br> <br>  </span> `
+       })  
+     }
+     }    
+  },  
   }
-
- 
-
-
 </script>
  
  <style scoped>

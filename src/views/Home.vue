@@ -9,8 +9,8 @@
              </div>
 
          <v-flex  id="nav" text-xs-center class="mt-2">
-        <v-btn  round to='/about'  class="orange lighten-3  btn2 "> Explore my work  <v-icon right>work</v-icon></v-btn>
-        <v-btn round to='/contact'  class="orange lighten-3  btn2"> Hire Me  <v-icon right>person</v-icon></v-btn>        
+        <v-btn  round to='/about'  class="orange lighten-3   "> Explore my work  <v-icon right>work</v-icon></v-btn>
+        <v-btn round to='/contact'  class="orange lighten-3 "> Hire Me  <v-icon right>person</v-icon></v-btn>        
       </v-flex>
 
         </v-layout>
@@ -29,30 +29,5 @@ export default {
     width: 100%; height: 100%;}
     #nav .btn2 {
   position: relative;
-}
-#nav .btn2:after {
-  position: absolute; bottom: 0; left: 0; right: 0; margin: auto;
-  width: 0%; content: '.';  color: transparent;  background: rgb(223, 56, 112);
-  height: 1px;
-}
-#nav .btn2 {
-  transition: all .3s;
-}
-#nav .btn2:after {
-  text-align: left; content: '.';  margin: 0;  opacity: 0;
-}
-#nav .btn2:hover {
-  color:cyan;  z-index: 1;
-}
-#nav .btn2:hover:after {
-  z-index: -10; animation: fill .37s forwards; -webkit-animation: fill .37s forwards;
-  -moz-animation: fill .37s forwards;  opacity: 1;
-}
-
-/* Keyframes */
-@-webkit-keyframes fill {
-  0% {  width: 0%; height: 1px;  }
-  50% { width: 100%;  height: 1px; }
-  100% {  width: 100%; height: 100%;  background: #E31B6D; }
 }
 </style>

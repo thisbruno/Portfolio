@@ -5,26 +5,21 @@
       <v-spacer></v-spacer> 
       <!-- class="hidden-sm-and-down " -->
       <span v-for="link in menuItems" :key="link.title" id="nav"  > 
-        <v-btn  flat large class=" darken-2  btn2"   router :to='link.route'>
+        <v-btn  flat class=" darken-2  btn2"   router :to='link.route'>
             <!-- <v-icon  class="  purple--text">{{link.icon}}</v-icon> -->
-          <span  class="font-weight-bold toolbar-link pl-1">{{link.title}}</span>
+          <span  class="font-weight-bold toolbar-link pl-2 mx-2 pr-2 ">{{link.title}}</span>
         </v-btn>       
       </span>
        <v-spacer></v-spacer> 
     </v-toolbar>
-    <!-- the side-nav links -->
-  
+    <!-- the side-nav links -->  
   </v-card>
 </template>
 
-
-<script>
-  
+<script>  
 export default { 
-
   data() {
     return{
-
     menuItems :[
        {  icon:'person', title : "Home", route:"/" },
       {  icon:'supervisor_account', title : "About", route:"/about" },
@@ -33,17 +28,13 @@ export default {
       {  icon:'person', title : "Skills", route:"/skills" },
       {  icon:'person', title : "Contact", route:"/contact" },
         ]   
-    }
-  },   
-  }
-
+    }},}
 </script>
 
 <style scoped>
 .toolbar-link{
   font-size: 12px;
 }
-
 #nav .btn2 {
   position: relative;
 }
@@ -65,8 +56,6 @@ export default {
   z-index: -10; animation: fill .37s forwards; -webkit-animation: fill .37s forwards;
   -moz-animation: fill .37s forwards;  opacity: 1;
 }
-
-/* Keyframes */
 @-webkit-keyframes fill {
   0% {  width: 0%; height: 1px;  }
   50% { width: 100%;  height: 1px; }

@@ -4,7 +4,7 @@
         <h1 class="heading text-xs-center mb-3 primary--text ">Contact Details</h1>
 
         <v-layout row wrap> 
-        <v-flex xs12 sm6 offset-sm1 class=" mt-3">
+        <v-flex xs12 sm12 offset-sm1 class=" mt-3">
             <v-card round>
               <v-form class="mt-1 px-5 py-3 info lighten-3 "
                action="https://formspree.io/thisbruno7@gmail.com"  method="POST">
@@ -18,7 +18,7 @@
             </v-card>
           </v-flex>                 
           
-          <v-flex xs12 sm4 offset-sm1 offset-xs0 class="mt-5" >  
+          <v-flex xs12 sm3 offset-sm1 offset-xs0 class="mt-5" >  
               <v-flex xs12 sm12 offset-sm  class="text-xs-center justify-center" >
                 <v-btn class="cyan  lighten-3 font-weight-bold mb-1"> <v-icon left>phone</v-icon>
                   (+254)-70-7474-123 </v-btn>

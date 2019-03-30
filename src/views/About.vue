@@ -4,16 +4,13 @@
   <v-layout row wrap>
     <v-flex xs12 sm7 md7 class=" text-sm-left ml-3 pl-3">
        <div class="title font2 text-xs-center " style="color: #E31B6D;">FEW WORDS ABOUT ME,</div> <br>      
-       <div class="body-2 cyan--text font-weight-light abouttext">
+       <div class="subheading cyan--text font-weight-light abouttext">
          <div class="abouttext">Everything started with a passion for programming and web technologies. </div> <br>
-         <div class="abouttext">I’m a Front-end Developer with more than two years of experience in WEB technologies. I have doing a different kind of projects using JavaScript / HTML5 / CSS3 and have a big passion to grow and know even more. Recently I learned Vue.js/MySQL and created a website for my portfolio based on Vue.js.</div>
-
-         <!-- <div class="abouttext">I enjoy converting my ideas into code to build products and projects that makes the world a better place while fulfilling the my clients needs and instructions to the letter</div> <br> -->
-         <!-- <div class="abouttext">I've always been drawn to the overlap between design and development. My <router-link to= '/skills' tag="span"  style="cursor: pointer; color: #E31B6D; font-style: italic" class="font-weight-bold">skills </router-link> are broad ranging from ux to design, front end to back end development.</div><br>
-          <div class="abouttext">
-          I'm available for remote work - if you would like to build something together, 
-        <router-link to = '/contact' style="cursor: pointer; color: #E31B6D" class="font-weight-bold"><span style="font-style: italic">get in touch ?</span></router-link> -->
-       <!-- </div> -->
+         <div class="abouttext">I’m a Front-end Developer with more than two years of experience in WEB technologies. I have doing a different kind of projects using JavaScript / HTML5 / CSS3 and have a big passion to grow and know even more. Recently I learned Vue.js/MySQL and created a website for my portfolio based on Vue.js.</div> <br>
+         <div class="abouttext">I've always been drawn to the overlap between design and development. My <router-link to= '/skills' tag="span"  style="cursor: pointer; color: #E31B6D;" class="font-weight-bold">skills </router-link> are broad ranging from ux to design, front end to back end development.
+         I'm available for remote work - if you would like to build something together, 
+        <router-link to = '/contact' style="cursor: pointer; color: #E31B6D" class="font-weight-bold"><span>get in touch ?</span></router-link> 
+       </div>
          </div>     
     </v-flex>
 
@@ -38,8 +35,6 @@
 <script>
 import Nav from '../components/Nav.vue'
 import Footer from '../components/Footer.vue'
-
-
   export default {
     components: {
       Nav, Footer   
@@ -59,7 +54,8 @@ import Footer from '../components/Footer.vue'
 <style scoped>
 .abouttext{
     line-height: 1.4;
-    font-family: droid serif, lato;
+    color: antiquewhite
+    /* font-family: droid serif, lato; */
 }
 .underline{
   text-decoration: underline;

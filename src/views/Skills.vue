@@ -1,7 +1,7 @@
 <template>
 <v-app  id ="skills" >
 <Nav></Nav>
-<h1 class="text-xs-left mt-3 mb-4 ml-4 primary--text heading skill">My Skills</h1>
+<h1 class="text-xs-left mt-3 mb-3 ml-4 primary--text heading skill">My Skills</h1>
 <v-layout row wrap>
   <v-flex xs12 sm6 md7 class="py-2 ml-3">
     <div class="subheading cyan--text font-weight-light ">
@@ -10,7 +10,7 @@
     <div>I'm also proficient with Back-End Technologies i.e Node.Js and Databasing technologies like Mongo DB and serverless options like Firebase and Amazon Web Services also have experience in working with CMS like WordPress Drupal. </div> </div>
   </v-flex>
    <v-spacer></v-spacer>
-  <v-flex xs12 sm5 md4 offset-md0 class="pt-0 mr-0 ">
+  <v-flex xs12 sm5 md4 offset-md0 class="pt-0 mr-0 mr-4 ">
     <v-card round> <tprogress></tprogress>  </v-card>
   </v-flex>  
 </v-layout>

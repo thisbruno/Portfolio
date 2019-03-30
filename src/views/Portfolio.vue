@@ -1,44 +1,41 @@
 <template>
   <v-app class="contact ">
     <Nav></Nav>
-    <h1 class="display-2 text-xs-center my-3 mb-4 primary--text ">Portfolio of my Past Work</h1>
-     <v-layout row wrap>
-      <v-flex xs12 sm10 md8 offset-sm1 offset-md2 class="mt-3 ">
+    <h1 class="sunheading text-xs-center my-2 mb-3 primary--text ">Portfolio</h1>
+     <v-layout row wrap justify-space-around >
+      <v-flex xs12 sm5 md5 justify-center class="mt-2 ">
           <v-hover>
             <v-card slot-scope="{ hover }" class="mx-auto img1"
               color="grey lighten-4"  >
               <v-img  :aspect-ratio="16/9"   >
                 <v-expand-transition>
-                  <div  v-if="hover"  class="d-flex transition-fast-in-fast-out cyan lighten-2 v-card--reveal display-3 white--text"  style="height: 70%;"  >
-                  <div class="font-weight-bold headline mb-2 black--text text-xs-center">
+                  <div  v-if="hover"  class="d-flex transition-fast-in-fast-out cyan lighten-2 v-card--reveal body-2 white--text"  style="height: 70%;"  >
+                  <div class="font-weight-bold body-2  black--text text-xs-center">
                       Made of bamboo by hand <br>
                       Our Vintage kitchen utensils delight any chef.<br>
-                  <v-btn  class="primary body-1 font-weight-bold black--text">read more</v-btn>
+                  <v-btn  class="primary small body-1 font-weight-bold black--text">read more</v-btn>
                   </div>
                   </div>
                 </v-expand-transition>
               </v-img>
               <v-card-text  class="cyan lighten-2"  style="position: relative;" >
-                <h3 class="headline  font-weight-bold primary--text mb-1 text-uppercase text-xs-center">
-                  QW cooking utensils 
-                  <v-btn left small  class="primary black--text fw-btn"><v-icon>arrow_forward</v-icon></v-btn>
+                <h3 class="body-2  font-weight-bold primary--text mb-1 text-uppercase text-xs-center">
+                  project name   
                 </h3>
+                
               </v-card-text>
             </v-card>
-          </v-hover>
- 
+          </v-hover> 
         </v-flex>                 
-        </v-layout>
-
-        <v-layout row wrap>
-        <v-flex xs12 sm10 md8 offset-sm1 offset-md2 class="mt-3 ">
+       
+        <v-flex xs12 sm5 md5 justify-center  class="mt-2">
           <v-hover>
             <v-card slot-scope="{ hover }" class="mx-auto img1"
               color="grey lighten-4"  >
               <v-img  :aspect-ratio="16/9"   >
                 <v-expand-transition>
                   <div  v-if="hover"  class="d-flex transition-fast-in-fast-out cyan lighten-2 v-card--reveal display-3 white--text"  style="height: 70%;"  >
-                  <div class="font-weight-bold headline mb-2 black--text text-xs-center">
+                  <div class="font-weight-bold body-2  black--text text-xs-center">
                       Made of bamboo by hand <br>
                       Our Vintage kitchen utensils delight any chef.<br>
                   <v-btn  class="primary body-1 font-weight-bold black--text">read more</v-btn>
@@ -47,7 +44,7 @@
                 </v-expand-transition>
               </v-img>
               <v-card-text  class="cyan lighten-2"  style="position: relative;" >
-                <h3 class="headline  font-weight-bold primary--text mb-1 text-uppercase text-xs-center">QW cooking utensils</h3>
+                <h3 class="body-1  font-weight-bold primary--text mb-1 text-uppercase text-xs-center">QW cooking utensils</h3>
               </v-card-text>
             </v-card>
           </v-hover>
