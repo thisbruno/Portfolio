@@ -1,16 +1,16 @@
 <template>
     <v-container fluid fill-height class="home-hero" style="max-height: 100vh;">
-        <v-layout justify-center align-center column class="mt-5 pt-5">
-            <div class="display-4 white--text text-xs-center mt-5 pt-1 primary--text">Welcome,</div>
-            <div class="display-2 white--text text-xs-center ma-2 mt-5 pt-2">I'm <span class="display-3" style="color: #E31B6D;" >Bruno </span> ,</div>
+        <v-layout justify-center align-center column class="mt-5 pt-1">
+            <div class="display-2  text-xs-center mt-5 pt-1 primary--text">Welcome,</div>
+            <div class="display-1 white--text text-xs-center ma-2 mt-5 pt-2">I'm <span class="display-1" style="color: #E31B6D;" >Bruno </span> ,</div>
 
-            <div class="display-1  white--text  text-xs-center ma-2 mb-3" >
+            <div class="display-1 white--text  text-xs-center ma-2 mb-3" >
                 Full-Stack Web Developer 
              </div>
 
          <v-flex  id="nav" text-xs-center class="mt-2">
-        <v-btn flat round to='/about' large class="orange lighten-3  btn2 "> Explore my work  <v-icon right>work</v-icon></v-btn>
-        <v-btn round to='/contact' large class="orange lighten-3  btn2"> Hire Me  <v-icon right>person</v-icon></v-btn>        
+        <v-btn  round to='/about'  class="orange lighten-3  btn2 "> Explore my work  <v-icon right>work</v-icon></v-btn>
+        <v-btn round to='/contact'  class="orange lighten-3  btn2"> Hire Me  <v-icon right>person</v-icon></v-btn>        
       </v-flex>
 
         </v-layout>

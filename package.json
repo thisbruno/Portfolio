@@ -7,6 +7,7 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "bootstrap-vue": "^2.0.0-rc.13",
     "material-design-icons-iconfont": "^3.0.3",
     "register-service-worker": "^1.6.2",
     "roboto-fontface": "*",
@@ -16,10 +17,12 @@
     "vuetify": "^1.5.5"
   },
   "devDependencies": {
+    "@babel/polyfill": "^7.2.5",
     "@vue/cli-plugin-babel": "^3.5.0",
     "@vue/cli-service": "^3.5.2",
     "node-sass": "^4.9.0",
     "sass-loader": "^7.1.0",
+    "vue-cli-plugin-bootstrap-vue": "^0.2.0",
     "vue-cli-plugin-vuetify": "^0.5.0",
     "vue-template-compiler": "^2.5.21"
   },

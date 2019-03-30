@@ -1,11 +1,8 @@
 <template>
 <v-app>
 <v-layout >
-  <v-flex xs12 class="act">
-    <!-- <button @click="onClick" class="menu-toggle"></button> -->
- <div class="icon-two" @click="onClick">
-  <div class="hamburger hamburger-two"></div>
-</div>
+  <v-flex xs12>
+    <button @click="onClick" class="menu-toggle"></button>
   </v-flex>
 </v-layout>
 <nav>
@@ -25,84 +22,31 @@
   export default {
     methods:{
       onClick: function(){
-  $('.icon-two').toggleClass("active-two");
-  }}}  
+  $('body').toggleClass('open');}}}  
 </script>
 
-
- $(".icon-two").click(function() {
-    $(".icon-two").toggleClass("active-two");
-  });
-
 <style scoped>
-/* General */
-body {
-  margin: 0;
-  padding: 0;
-  width:100px;
-  background: #7EDC67;
-}
+@charset "UTF-8";
+ul { list-style: none; margin: 0; padding: 0;}
 
-.hamburger {
-  top:50%;
-  left:10%;
-  width: 50px;
-  height: 6px;
-  background: #FCFCFC;
-  position: absolute;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
-  transition: 0.5s;
-}
+ul li { cursor: pointer; padding: 7px 27px; font-size: 43px;}
 
-.hamburger:before {
-  top: -16px;
-}
+button {  opacity: 1.6; background-color: transparent;
+  position: fixed; z-index: 2; top: 27px; right: 24px;  border: none; width: 37px; height: 31px;  outline: none;  transition: opacity 0.2s ease-out;}
 
-.hamburger:after {
-  top: 16px;
-}
+button:before {   content: "";  position: absolute;   top: 0;  right: 0;
+  bottom: 0;  left: 0;  margin: auto;  right: auto;  width: 100%;
+  background: linear-gradient(to bottom, #E31B6D, #E31B6D 20%, transparent 20%, transparent 40%, #E31B6D 40%, #E31B6D 60%, transparent 60%, transparent 80%, #E31B6D 80%, #E31B6D 100%); transition: opacity 0.2s ease-out, width 0.2s 0.2s ease-out;}
 
-/* Icon 2 */
-.icon-two {
-  position: absolute;
-  top: 10%;
-  left: 40%;
-  width: 100px;
-  height: 100px;
-  cursor: pointer;
-}
+button:after {  opacity: 0; content: '×';  color: #E31B6D;  position: absolute;  top: 16px; left: -4px;  font-family: Arial, sans-serif;  font-size: 76px;  line-height: 0;  transition: opacity 0.4s ease-out;}
 
-.hamburger-two:before,
-.hamburger-two:after {
-  content: '';
-  position:absolute;
-  width: 50px;
-  height: 6px;
-  background:#FCFCFC;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  transition:0.5s;
-}
-
-.icon-two.active-two .hamburger-two {
-  transform:rotate(180deg);
-  box-shadow: 0 -2px 5px rgba(0, 0, 0, .2);
-}
-
-.icon-two.active-two .hamburger-two:before {
-  top: -9px;
-  right:-5px;
-  width:30px;
-  transform:rotate(-135deg);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0);
-}
-
-.icon-two.active-two .hamburger-two:after {
-  top: 9px;
-  right:-5px;
-  width:30px;
-  transform:rotate(-45deg);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0);
-}
+button:active {  -webkit-transform: translateY(2px); transform: translateY(2px);}
+button:hover {  opacity: 1;}
+.open button { opacity: 1;}
+.open button:before {  opacity: 0;  width: 0;}
+.open button:after {  opacity: 1;  -webkit-transform: translate3d(0, 0, 0) rotate(360deg);
+   transform: translate3d(0, 0, 0) rotate(360deg);  transition: opacity 0.4s 1s ease-out, -webkit-transform 0.4s 1s ease-out;
+  transition: transform 0.4s 1s ease-out, opacity 0.4s 1s ease-out;  transition: transform 0.4s 1s ease-out, opacity 0.4s 1s ease-out, -webkit-transform 0.4s 1s ease-out;}
 
 nav {  z-index: 1;  position: fixed;  top: -100%;  left: 0;  width: 100%;  height: 100%;
   -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0);
@@ -263,8 +207,4 @@ ul.menu li:hover:after {
   }
 }
 
-
-
-
 </style>
-
