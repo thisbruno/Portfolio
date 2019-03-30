@@ -4,21 +4,29 @@
         <h1 class="heading text-xs-center mb-3 primary--text ">Contact Details</h1>
 
         <v-layout row wrap> 
-        <v-flex xs12 sm6 offset-sm1 class=" mt-3">
+        <v-flex xs12 sm6 md5 offset-sm1 class=" mt-3">
             <v-card round>
-              <v-form class="mt-1 px-5 py-3 info lighten-3 "
-               action="https://formspree.io/thisbruno7@gmail.com"  method="POST">
-                <p class="subheading ml-2 primary--text text-uppercase text-xs-center">Send me a Message </p>
-                 <v-text-field   style="font-size:15px; font-color:red" name="name" placeholder="Name" height='16px' v-model="name"  ></v-text-field>
-               <v-text-field light  class="" style="font-size: 15px"  name="_replyto" placeholder="Email" height='16px' v-model="email"  >  </v-text-field>
+             <v-form class="mt-1 px-5 py-3 info lighten-3 pageclip-form "
+               action="https://send.pageclip.co/gOf5il7pwKwOvgYn2k0IWWmZFob8Ju2f"  
+               method="post" ref="form"   v-model="valid"  lazy-validation>
+                <p class="subheading ml-2 primary--text text-uppercase text-xs-center">
+                  Send me a  THE Message </p>
+
+            <v-text-field   style="font-size:15px; font-color:red" name="name"
+                  required placeholder="Name" height='16px' :rules="nameRules" ></v-text-field>
+
+             <v-text-field light  class="" style="font-size: 15px"  name="_replyto" required placeholder="Email" height='16px' v-model="email" :rules="emailRules"   >  </v-text-field>
                
-                <v-textarea  style="font-size:15px" rows='4' name="message" v-model="message" placeholder="Message"   ></v-textarea>
-                 <v-btn class="info  lighten-3 primary--text" type="submit"  >Send Message</v-btn> 
+              <v-textarea  style="font-size:15px" rows='4' name="message"  required placeholder="Message"   ></v-textarea>
+
+              <v-btn class="info  lighten-3 primary--text pageclip-form__submit" type="submit"  :disabled="!valid"  >
+                   <span>Send</span></v-btn> 
+
               </v-form>
             </v-card>
           </v-flex>                 
           
-          <v-flex xs12 sm4 offset-sm1 offset-xs0 class="mt-5" >  
+          <v-flex xs12 sm4 md5 offset-sm1 offset-xs0 class="mt-5" >  
               <v-flex xs12 sm12 offset-sm  class="text-xs-center justify-center" >
                 <v-btn class="cyan  lighten-3 font-weight-bold mb-1"> <v-icon left>phone</v-icon>
                   (+254)-70-7474-123 </v-btn>
@@ -39,7 +47,7 @@
                </v-flex>
             </v-layout>
             <Footer></Footer>  
-            <Hmenu/> 
+            <!-- <Hmenu/>  -->
   </v-app>
 </template>
 
@@ -53,32 +61,23 @@ import Footer from '../components/Footer.vue'
     },
     data(){
       return{
-        name: '' , email : '' , message : ""
+        name: '' , email : '' , message : "",
+         valid: true, 
+         email: '',
+         emailRules: [
+            v => !!v || 'E-mail is required',
+           v => /.+@.+/.test(v) || 'E-mail must be valid' ],
+           nameRules:[
+             v => v.length >= 3 || 'Please fill ur name' 
+           ]        
       }
     },
    methods: {
-    onSubmit: function () {
-      console.log('message sentS')     
-      $.ajax({
-        url: "https://formspree.io/brplus7@gmail.com",
-        method: 'POST',
-        data: {
-           name: this.name,
-          email: this.email,
-          message: this.message
-        } .serialize(),
-        dataType: 'json'
-      }).then(function () {
-        this.formSuccess = true
-        this.$emit('success', true)
-        console.log('message sent');
-        
-      })
-    }
+     
   },
     
    
-  };
+  }
 
  
 

@@ -67,7 +67,7 @@ import Footer from '../components/Footer.vue'
     data () {
       return {
         works :[
-          {image:'', bottomtitle:'', hovertitle:'', btnurl}
+          {image:'', bottomtitle:'', hovertitle:'', btnurl :''}
         ]
       }
     }

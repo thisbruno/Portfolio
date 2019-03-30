@@ -20,7 +20,7 @@
 
 <script>
 import Nav from '../components/Nav.vue'
-import tprogress from '../components/Progress2'
+import tprogress from '../components/Progress'
 import Footer from '../components/Footer.vue'
   export default {
     components: {

@@ -29,7 +29,7 @@ export default {
        {  icon:'person', title : "Home", route:"/" },
       {  icon:'supervisor_account', title : "About", route:"/about" },
       {  icon:'person', title : "Portfolio", route:"/portfolio" },
-      {  icon:'person', title : "services", route:"/services" },
+      // {  icon:'person', title : "services", route:"/services" },
       {  icon:'person', title : "Skills", route:"/skills" },
       {  icon:'person', title : "Contact", route:"/contact" },
         ]   
