@@ -12,17 +12,15 @@
                 <p class="subheading ml-2 primary--text text-uppercase text-xs-center">
                   Send me Message </p>
               
-              <v-flex xs7>
-                <v-text-field   style="font-size:15px; font-color:red" name="name"
-                  required placeholder="Name" height='16px' :rules="nameRules" ></v-text-field>
-              </v-flex>
-            
-             <v-flex xs7>
-             <v-text-field light  class="" style="font-size: 15px"  name="_replyto" required placeholder="Email" height='16px' v-model="email" :rules="emailRules"   >  </v-text-field>
+              <v-flex xs7  ma-0>
+                <v-text-field outline style="font-size:15px; font-color:red" name="name"
+                  required  label="NAME" height='12px' ></v-text-field>
+             
+                  <v-text-field light  class="" style="font-size: 15px"  name="_replyto" required label="E-MAIL" outline height='12px' v-model="email" :rules="emailRules"   >  </v-text-field>
                </v-flex>
             
              <v-flex xs10>               
-              <v-textarea  style="font-size:15px" rows='4' name="message" :rules='messageRules'  required placeholder="Message"   ></v-textarea>
+              <v-textarea  style="font-size:15px" rows='4' name="message" :rules='messageRules'  required label="MESSAGE" outline   ></v-textarea>
             </v-flex>
               <v-btn class="info  lighten-3 primary--text pageclip-form__submit" type="submit"  :disabled="!valid"  @click="theSubmit"  >
                    <span>Send</span></v-btn> 
@@ -70,14 +68,9 @@ import Footer from '../components/Footer.vue'
          emailRules: [
             v => !!v || 'e-mail required',
            v => /.+@.+/.test(v) || 'e-mail not valid' ],
-           nameRules:[
-             v => !!v || '***' 
-           ],
            messageRules: [
              v => !!v || '***'
-           ]       
-      }
-    },
+           ] } },
    methods: {
      theSubmit() {
        if(this.$refs.form.validate()){
@@ -86,7 +79,7 @@ import Footer from '../components/Footer.vue'
           onSubmit: function (event) { },
           onResponse: function (error, response) { },
           successTemplate:` <span >
-          <div class="text-xs-center title primary--text headline"> Message Sent Succesfully !!!</div> <br> <br>  </span> `
+          <div class="text-xs-center headline primary--text headline pa-5 cyan"> Message Sent Succesfully !!!</div> <br> <br>  </span> `
        })  
      }
      }    
