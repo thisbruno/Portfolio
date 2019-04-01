@@ -8,7 +8,7 @@
 <style scoped>
 .back{
   background-color: #6880e2;
-  margin: 173px 23% -2px
+  margin: 73px 13% -2px
 }
 </style>
 

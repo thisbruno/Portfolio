@@ -3,9 +3,9 @@ import Router from 'vue-router'
 
 // import Home from './views/Home.vue'
 import About from './views/About.vue'
-import Contact from './views/Contact2.vue'
-import Portfolio from './views/Portfolio2.vue'
-import Skills from './views/Skills.vue'
+import Contact from './views/Contact.vue'
+import Portfolio from './views/Portfolio.vue'
+import Services from './views/Services.vue'
 import Home from './views/Home.vue'
 
 
@@ -33,9 +33,9 @@ export default new Router({
       component: Portfolio
     },
     {
-      path: '/skills',
-      name: 'Skills',
-      component: Skills
+      path: '/Services',
+      name: 'Services',
+      component: Services
     },
     {
       path: '/contact',

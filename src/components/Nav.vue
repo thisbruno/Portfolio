@@ -1,14 +1,15 @@
 <template>
   <v-card >
-    <v-toolbar  light  app color="cyan lighten-1" height='59' >   
-      <router-link to="/"><img class="red" height="63" contain src='../assets/fav.jpg' /></router-link>
+    <v-toolbar  app light  color="cyan lighten-0" height='73' >   
+      <router-link to="/"><img  height="63" contain src='../assets/fav.jpg' /></router-link>
       <v-spacer></v-spacer> 
       <!-- class="hidden-sm-and-down " -->
       <span v-for="link in menuItems" :key="link.title" id="nav"  > 
-        <v-btn  flat class=" darken-2  btn2"   router :to='link.route'>
+        <router-link :to="link.route" class="black--text" style="text-decoration:none">
+        <v-toolbar-items  flat class=" darken-2  btn2"   router :to='link.route'>
             <!-- <v-icon  class="  purple--text">{{link.icon}}</v-icon> -->
-          <span  class="font-weight-bold toolbar-link pl-2 mx-2 pr-2 ">{{link.title}}</span>
-        </v-btn>       
+          <span  class="font-weight-bold headline toolbar-link mx-2 px-5 py-2 ">{{link.title}}</span>
+        </v-toolbar-items> </router-link>      
       </span>
        <v-spacer></v-spacer> 
     </v-toolbar>
@@ -25,13 +26,14 @@ export default {
       {  icon:'supervisor_account', title : "About", route:"/about" },
       {  icon:'person', title : "Portfolio", route:"/portfolio" },
       // {  icon:'person', title : "services", route:"/services" },
-      {  icon:'person', title : "Skills", route:"/skills" },
+      {  icon:'person', title : "Services", route:"/services" },
       {  icon:'person', title : "Contact", route:"/contact" },
         ]   
     }},}
 </script>
 
 <style scoped>
+rourter
 .toolbar-link{
   font-size: 12px;
 }

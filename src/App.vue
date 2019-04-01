@@ -5,3 +5,10 @@
     </v-content>    
   </v-app>
 </template>
+
+<style scoped>
+html{
+      overflow-y: hidden;
+    }
+</style>
+

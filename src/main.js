@@ -4,18 +4,18 @@ import './plugins/bootstrap-vue'
 import './plugins/vuetify'
 import App from './App.vue'
 import router from './router'
+import VueTyperPlugin from 'vue-typer'
 
 import './registerServiceWorker'
 import 'roboto-fontface/css/roboto/roboto-fontface.css'
 import 'material-design-icons-iconfont/dist/material-design-icons.css'
-// import Progress from 'bootstrap-vue/es/components/progress'
 
 
 Vue.config.productionTip = false
 
-// Vue.use(Progress)
+Vue.use(VueTyperPlugin)
 
 new Vue({
-  router, 
+  router, VueTyperPlugin,
   render: h => h(App),  
 }).$mount('#app')
